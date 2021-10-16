@@ -16,8 +16,22 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
     <title>Signin page</title>
     
 </head>
+<style>
+    body {display:flex;
+   align-items:center;
+   justify-content:space-around;
+   position:absolute;
+   right:0;
+   left:0;
+   bottom:0;
+   top:0;
+   border: solid white;
+   
+   background-color: rgb(223, 222, 222);
+   } 
+
+</style>
 <body>
-    
     <form  action="/cateogry/addcateogry" method="POST">
     <div class="card " style="width: 24rem;border-radius:5%">
         <div class="card-body">
@@ -34,50 +48,13 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
        </div>
        
 
-    &emsp;  &emsp;  &emsp;  &emsp;  &emsp;&emsp;&emsp;  <button type="submit" name="button" class=" btn btn-primary" >Add</button> 
+      <button type="submit" name="button" class=" btn btn-primary" >Add</button> 
     <p style="color:red"> <%= message %>   </p>
 </div>
 </div>
+<a href="/cateogry/deletecateogry">delete-Category</a> &emsp;
 
-</form><br><br><br><br>
-<form  action="/cateogry/updatecateogry" method="POST" class="float-right">
-    <div class="card " style="width: 24rem;border-radius:5%">
-        <div class="card-body">
-            <h2 class="text-center" style="font-family:monospace">Update-Cateogry</h2> <br>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Cateogryname</span> </div>
-            <input type="Category" name="Category" class="form-control" placeholder="Enter Category"><br> 
-           </div>
-           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">parent-cateogry</span> </div>
-            <input type="parentId" name="parentId" class="form-control" placeholder="parentId"><br> 
-           </div>
-    
-    &emsp;  &emsp;  &emsp;  &emsp;  &emsp;&emsp;&emsp;  <button type="submit" name="button" class=" btn btn-primary" >Update</button> 
-    <p style="color:red"> <%= message1 %>   </p>
-</div>
-</div>
-
-</form> <br> <br>
-
-<form action="/cateogry/deletecateogry" method="POST">
-
-    <div><h3 class="text-center" style="font-family:monospace">delete-Cateogry</h3> </div> 
-    <div class="input-group mb-3">
-       
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Category name</span> </div>
-            <input type="Category" name="Category" class="form-control" placeholder="Enter Category"><br> </div>
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">parent-cateogry</span> </div>
-                <input type="parentId" name="parentId" class="form-control" placeholder="parentId"><br> 
-               </div>
-        
-    <button type="submit" name="button" class=" btn btn-primary" >delete</button> 
-    <p style="color:red"> <%= message2 %>   </p>
-</form>
-
+<a href="/cateogry/updatecateogry">update-Category</a>
 
 
 

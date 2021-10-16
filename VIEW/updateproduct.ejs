@@ -19,7 +19,7 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
 <style>
      body {display:flex;
     align-items:center;
-    justify-content:space-around;
+    justify-content:center;
     position:absolute;
     right:0;
     left:0;
@@ -33,38 +33,40 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
 
 </style>
 <body>
-    
-    <form  action="/product/addproduct" method="POST">
+
+<form  action="/product/updateproduct" method="POST" class="float-right">
     <div class="card " style="width: 24rem;border-radius:5%">
         <div class="card-body">
-            <h2 class="text-center" style="font-family:monospace">Add-product</h2> <br>
-    
+            <h2 class="text-center" style="font-family:monospace">Update-product</h2> <br>
     <div class="input-group mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Productname</span> </div>
-        <input type="product" name="product" class="form-control" placeholder="Enter productname"><br> 
+        <input type="normal" name="normal" class="form-control" placeholder="Enter productname"><br> 
        </div>
+       <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">updated-Productname</span> </div>
+        <input type="Productname" name="Productname" class="form-control" placeholder="Enter productname"><br> 
     <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">description</span> </div>
         <input type="description" name="description" class="form-control" placeholder="description"><br> 
-       </div>
        
-<div class="input-group mb-3">
     <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">cateogry</span> </div>
-        <input type="cateogry" name="cateogry" class="form-control" placeholder="cateogry">
-      
-   
+        <span class="input-group-text" id="basic-addon1">cateogry</span> 
+        <input type=" parentId" name="parentId" class="form-control" placeholder="cateogry"> 
+    </div></div> 
+     <button type="submit" name="button" class=" btn btn-primary" >update</button> 
+    <p style="color:red"> <%= message %>   </p> </div>
 </div>
-      <button type="submit" name="button" class=" btn btn-primary" >Add</button> 
-
 </div>
-<p style="color:red"> <%= message %>   </p>
-</div>
+<a href="/product/deleteproduct">delete-Product</a>
+&emsp;
+<a href="/crudproduct">add-Product</a>
 
-<a href="/product/deleteproduct">delete-Product</a>  &emsp;
+</form>
 
-<a href="/product/updateproduct">update-Product</a>
+
+
+
 
 
 </body>

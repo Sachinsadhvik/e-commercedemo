@@ -6,14 +6,24 @@ const { deletecateogry, updatecateogry,addcateogry,readCategory} = require('../C
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }))
 
+router.get('/deletecateogry',(req,res)=>{
+    res.render("deletecateogry",{
+        message:" "
+    });
+})
+router.get('/updatecateogry',(req,res)=>{
+    res.render("updatecateogry",{
+        message:" "
+    });
+})
 router.post('/addcateogry',(req,res)=>{
    // console.log(req.body)
  addcateogry(req.body).then((x)=>{res.render("cateogry",{
-    message:"succesfully created category",message2:"",message1:""
+    message:"succesfully created category"
 })})
 
 .catch((err)=>{res.render("cateogry",{
-    message:err,message1:"",message2:""
+    message:err
 })})
 
 })
@@ -22,12 +32,12 @@ router.post('/deletecateogry',
 (req,res)=>{
     // console.log(req.body)
     deletecateogry(req.body)
-    .then((x)=>{res.render("cateogry",{
-        message2:"succesfully deleted ",message1:"",message:""
+    .then((x)=>{res.render("deletecateogry",{
+        message:"succesfully deleted "
     })})
     
-    .catch((err)=>{res.render("cateogry",{
-        message2:err,message:"",message1:""
+    .catch((err)=>{res.render("deletecateogry",{
+        message:err
     })})
 
 })
@@ -35,12 +45,12 @@ router.post('/deletecateogry',
  router.post('/updatecateogry', (req,res)=>{
     console.log(req.body) 
     updatecateogry(req.body)
-    .then((x)=>{res.render("cateogry",{
-        message1:"succesfully updated cateogry",message2:"",message:""
+    .then((x)=>{res.render("updatecateogry",{
+        message:"succesfully updated cateogry"
     })})
     
-    .catch((err)=>{res.render("cateogry",{
-        message1:err,message2:"",message:""
+    .catch((err)=>{res.render("updatecateogry",{
+        message:err
     })})
 
 })

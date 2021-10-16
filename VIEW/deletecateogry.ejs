@@ -17,54 +17,47 @@ rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3
     
 </head>
 <style>
-     body {display:flex;
-    align-items:center;
-    justify-content:space-around;
-    position:absolute;
-    right:0;
-    left:0;
-    bottom:0;
-    top:0;
-    border: solid white;
-    
-    background-color: rgb(170, 219, 219);
+    body {display:flex;
+   align-items:center;
+   justify-content:center;
+   position:absolute;
+   right:0;
+   left:0;
+   bottom:0;
+   top:0;
+   border: solid white;
    
-    } 
+   background-color: rgb(223, 222, 222);
+   } 
 
 </style>
 <body>
-    
-    <form  action="/product/addproduct" method="POST">
+<form action="/cateogry/deletecateogry" method="POST">
     <div class="card " style="width: 24rem;border-radius:5%">
         <div class="card-body">
-            <h2 class="text-center" style="font-family:monospace">Add-product</h2> <br>
-    
+    <div><h3 class="text-center" style="font-family:monospace">delete-Cateogry</h3> </div> 
     <div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Productname</span> </div>
-        <input type="product" name="product" class="form-control" placeholder="Enter productname"><br> 
-       </div>
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">description</span> </div>
-        <input type="description" name="description" class="form-control" placeholder="description"><br> 
-       </div>
        
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">cateogry</span> </div>
-        <input type="cateogry" name="cateogry" class="form-control" placeholder="cateogry">
-      
-   
-</div>
-      <button type="submit" name="button" class=" btn btn-primary" >Add</button> 
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Category name</span> </div>
+            <input type="Category" name="Category" class="form-control" placeholder="Enter Category"><br> </div>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">parent-cateogry</span> </div>
+                <input type="parentId" name="parentId" class="form-control" placeholder="parentId"><br> 
+               </div>
+            </div>
+        
+    <button type="submit" name="button" class=" btn btn-primary" >delete</button> 
+    <p style="color:red"> <%= message %>   </p>
 
-</div>
-<p style="color:red"> <%= message %>   </p>
-</div>
+    <a href="/crudcateogry" >add-Category</a> &emsp;
 
-<a href="/product/deleteproduct">delete-Product</a>  &emsp;
+<a href="/cateogry/updatecateogry">update-Category</a>
 
-<a href="/product/updateproduct">update-Product</a>
+</form>
+
+
+
 
 
 </body>

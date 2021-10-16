@@ -6,32 +6,36 @@ const productModel = require('../MODELS/productModel');
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }))
 
-router.get('/register',(req,res)=>{
-    res.render("register",{
+router.get('/deleteproduct',(req,res)=>{
+    res.render("deleteproduct",{
+        message:" "
+    });
+})
+router.get('/updateproduct',(req,res)=>{
+    res.render("updateproduct",{
         message:" "
     });
 })
 
-router.get
 router.post('/addproduct',(req,res)=>{
     addProduct(req.body).then((x)=>{res.render("product",{
-        message:"succesfully added product",message1:"",message2:""
+        message:"succesfully added product"
     })})
     
     .catch((err)=>{res.render("product",{
-        message:err,message1:"",message2:""
+        message:err
     })})
 
 })
 
 router.post('/deleteproduct',
 (req,res)=>{deleteProduct(req.body)
-    .then((x)=>{res.render("product",{
-        message2:"succesfully deleted product",message1:"",message:""
+    .then((x)=>{res.render("deleteproduct",{
+        message:"succesfully deleted product"
     })})
     
-    .catch((err)=>{res.render("product",{
-        message2:err,message1:"",message:""
+    .catch((err)=>{res.render("deleteproduct",{
+        message:err
     })})
 
 })
@@ -40,12 +44,12 @@ router.post('/deleteproduct',
  router.post('/updateproduct', (req,res)=>{
     console.log(req.body) 
     updateProduct(req.body)
-    .then((x)=>{res.render("product",{
-        message1:"succesfully updated product",message2:"",message:""
+    .then((x)=>{res.render("updateproduct",{
+        message:"succesfully updated product"
     })})
     
-    .catch((err)=>{res.render("product",{
-        message1:err,message:"",message2:""
+    .catch((err)=>{res.render("updateproduct",{
+        message:err
     })})
 
 })

@@ -14,13 +14,12 @@ app.use(express.static('STATIC'))
 
 app.get('/crudproduct',(req,res)=>{
     res.render('product',{
-        message:"",message1:"",message2:""
-    })})
+        message:""})})
     // res.send("hello world fifty hunderds are for sure will be coming ")
 
 app.get('/crudcateogry',(req,res)=>{
     res.render('cateogry',{
-        message:"",message1:"",message2:""
+        message:""
     })})
     // res.send("hello world fifty hunderds are for sure will be coming ")
 app.listen(port,()=>{console.log("server started")})
